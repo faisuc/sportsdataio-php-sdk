@@ -2,6 +2,4 @@
 
 namespace Faisuc\SportsdataioPhpSdk;
 
-class SportsdataioPhpSdkClass
-{
-}
+class SportsdataioPhpSdkClass {}
