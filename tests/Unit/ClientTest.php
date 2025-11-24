@@ -2,7 +2,6 @@
 
 use Faisuc\SportsdataioPhpSdk\Client;
 use GuzzleHttp\Client as GuzzleClient;
-use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
@@ -14,7 +13,7 @@ it('can instantiate the client', function () {
 });
 
 it('can set a custom HTTP client', function () {
-    $guzzleClient = new GuzzleClient();
+    $guzzleClient = new GuzzleClient;
     $client = new Client($this->apiKey, $guzzleClient);
 
     expect($client)->toBeInstanceOf(Client::class);
@@ -131,4 +130,3 @@ it('preserves null in arrays', function () {
     expect($result)->toBe(['value' => null, 'other' => 'test'])
         ->and($result['value'])->toBeNull();
 });
-

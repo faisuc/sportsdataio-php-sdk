@@ -74,4 +74,3 @@ it('can get headshots', function () {
 
     expect($result)->toBeArray();
 });
-

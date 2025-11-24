@@ -17,8 +17,6 @@ class SportsdataioPhpSdk
 
     /**
      * Get the NFL client
-     *
-     * @return NflClient
      */
     public function nfl(): NflClient
     {
@@ -31,12 +29,9 @@ class SportsdataioPhpSdk
 
     /**
      * Get the base HTTP client
-     *
-     * @return Client
      */
     public function getClient(): Client
     {
         return $this->client;
     }
 }
-

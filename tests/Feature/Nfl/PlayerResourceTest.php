@@ -110,4 +110,3 @@ it('can get pro bowlers', function () {
 
     expect($result)->toBeArray();
 });
-

@@ -32,10 +32,6 @@ class Client
     /**
      * Make a GET request to the API
      *
-     * @param  string  $endpoint
-     * @param  array  $queryParams
-     * @param  bool  $useBakerApi
-     * @return mixed
      *
      * @throws GuzzleException
      */
@@ -68,9 +64,6 @@ class Client
 
     /**
      * Decode the JSON response
-     *
-     * @param  ResponseInterface  $response
-     * @return mixed
      */
     protected function decodeResponse(ResponseInterface $response): mixed
     {
@@ -86,8 +79,6 @@ class Client
 
     /**
      * Get the API key
-     *
-     * @return string
      */
     public function getApiKey(): string
     {
@@ -96,9 +87,6 @@ class Client
 
     /**
      * Set a custom base URL (useful for testing)
-     *
-     * @param  string  $baseUrl
-     * @return void
      */
     public function setBaseUrl(string $baseUrl): void
     {
@@ -113,4 +101,3 @@ class Client
         ]);
     }
 }
-

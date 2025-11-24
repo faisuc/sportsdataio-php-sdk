@@ -29,4 +29,3 @@ it('can access all NFL resource categories', function () {
         ->and($nfl->news())->toBeInstanceOf(\Faisuc\SportsdataioPhpSdk\Nfl\Resources\NewsResource::class)
         ->and($nfl->utility())->toBeInstanceOf(\Faisuc\SportsdataioPhpSdk\Nfl\Resources\UtilityResource::class);
 });
-

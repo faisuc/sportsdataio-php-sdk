@@ -8,8 +8,6 @@ class UtilityResource extends Resource
 {
     /**
      * Returns true if there is at least one game being played at the time of the request or false if there are none.
-     *
-     * @return bool
      */
     public function areGamesInProgress(): bool
     {
@@ -22,8 +20,6 @@ class UtilityResource extends Resource
 
     /**
      * Returns the list of MarketTypes, BetTypes, PeriodTypes, OutcomeTypes, and ResultTypes.
-     *
-     * @return array
      */
     public function bettingMetadata(): array
     {
@@ -36,7 +32,6 @@ class UtilityResource extends Resource
      * Returns bye weeks for all teams in the specified season.
      *
      * @param  string  $season  Year of the season and the season type. Examples: 2015REG, 2015PRE, 2015POST
-     * @return array
      */
     public function byeWeeks(string $season): array
     {
@@ -47,8 +42,6 @@ class UtilityResource extends Resource
 
     /**
      * Returns the calendar year of the current season.
-     *
-     * @return int|null
      */
     public function currentSeason(): ?int
     {
@@ -61,8 +54,6 @@ class UtilityResource extends Resource
 
     /**
      * Returns the year of the most recently completed NFL season.
-     *
-     * @return int|null
      */
     public function lastCompletedSeason(): ?int
     {
@@ -75,8 +66,6 @@ class UtilityResource extends Resource
 
     /**
      * Returns the year of the current NFL season if in-season, or the next upcoming season if in the offseason.
-     *
-     * @return int|null
      */
     public function upcomingSeason(): ?int
     {
@@ -89,8 +78,6 @@ class UtilityResource extends Resource
 
     /**
      * Returns a list of all available sportsbooks with their associated unique IDs.
-     *
-     * @return array
      */
     public function activeSportsbooks(): array
     {
@@ -103,7 +90,6 @@ class UtilityResource extends Resource
      * Returns current timeframes, including week, season phase, and overall season status.
      *
      * @param  string  $type  The type of timeframes to return. Valid entries: current, upcoming, completed, recent, all
-     * @return array
      */
     public function timeframes(string $type): array
     {
@@ -114,8 +100,6 @@ class UtilityResource extends Resource
 
     /**
      * Returns the current week number.
-     *
-     * @return int|null
      */
     public function currentWeek(): ?int
     {
@@ -128,8 +112,6 @@ class UtilityResource extends Resource
 
     /**
      * Returns the number of the last completed NFL week.
-     *
-     * @return int|null
      */
     public function lastCompletedWeek(): ?int
     {
@@ -142,8 +124,6 @@ class UtilityResource extends Resource
 
     /**
      * Returns the number of the next upcoming week.
-     *
-     * @return int|null
      */
     public function upcomingWeek(): ?int
     {
@@ -154,4 +134,3 @@ class UtilityResource extends Resource
         return is_int($result) ? $result : null;
     }
 }
-

@@ -10,7 +10,6 @@ class CompetitionResource extends Resource
      * Returns regular season standings for all teams in the specified season.
      *
      * @param  string  $season  Year of the season and the season type. Examples: 2015REG, 2015PRE, 2015POST
-     * @return array
      */
     public function standings(string $season): array
     {
@@ -19,4 +18,3 @@ class CompetitionResource extends Resource
         return $this->client->get($endpoint);
     }
 }
-

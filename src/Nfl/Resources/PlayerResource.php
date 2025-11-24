@@ -8,8 +8,6 @@ class PlayerResource extends Resource
 {
     /**
      * Returns all players with their biographical information.
-     *
-     * @return array
      */
     public function all(): array
     {
@@ -20,8 +18,6 @@ class PlayerResource extends Resource
 
     /**
      * Returns players who are not on a team.
-     *
-     * @return array
      */
     public function freeAgents(): array
     {
@@ -34,7 +30,6 @@ class PlayerResource extends Resource
      * Returns rookies from the specified draft year.
      *
      * @param  int  $season  Year of the season. Examples: 2018, 2019
-     * @return array
      */
     public function rookies(int $season): array
     {
@@ -47,7 +42,6 @@ class PlayerResource extends Resource
      * Returns all players on the specified team.
      *
      * @param  string  $team  Abbreviation of the team. Example: WAS
-     * @return array
      */
     public function byTeam(string $team): array
     {
@@ -58,8 +52,6 @@ class PlayerResource extends Resource
 
     /**
      * Returns full player bio and details for all NFL players.
-     *
-     * @return array
      */
     public function details(): array
     {
@@ -70,8 +62,6 @@ class PlayerResource extends Resource
 
     /**
      * Returns full player bio and details for free agents.
-     *
-     * @return array
      */
     public function detailsFreeAgents(): array
     {
@@ -82,8 +72,6 @@ class PlayerResource extends Resource
 
     /**
      * Returns full player bio and details for injured players.
-     *
-     * @return array
      */
     public function detailsInjured(): array
     {
@@ -96,7 +84,6 @@ class PlayerResource extends Resource
      * Returns full player bio and details for players by team.
      *
      * @param  string  $team  Abbreviation of the team. Example: WAS
-     * @return array
      */
     public function detailsByTeam(string $team): array
     {
@@ -109,7 +96,6 @@ class PlayerResource extends Resource
      * Returns full player bio and details for rookies by draft year.
      *
      * @param  int  $season  Year of the season. Examples: 2018, 2019
-     * @return array
      */
     public function detailsRookies(int $season): array
     {
@@ -123,7 +109,6 @@ class PlayerResource extends Resource
      *
      * @param  string  $season  Year of the season and the season type. Examples: 2015REG, 2015PRE, 2015POST
      * @param  int  $week  Week of the season. Valid values: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4
-     * @return array
      */
     public function injuries(string $season, int $week): array
     {
@@ -138,7 +123,6 @@ class PlayerResource extends Resource
      * @param  string  $season  Year of the season and the season type. Examples: 2015REG, 2015PRE, 2015POST
      * @param  int  $week  Week of the season. Valid values: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4
      * @param  string  $team  Abbreviation of the team. Example: WAS
-     * @return array
      */
     public function injuriesByTeam(string $season, int $week, string $team): array
     {
@@ -149,8 +133,6 @@ class PlayerResource extends Resource
 
     /**
      * Returns depth chart information for all active players.
-     *
-     * @return array
      */
     public function depthCharts(): array
     {
@@ -161,8 +143,6 @@ class PlayerResource extends Resource
 
     /**
      * Returns depth chart information for all players (including IR, PUP, etc.).
-     *
-     * @return array
      */
     public function depthChartsAll(): array
     {
@@ -175,7 +155,6 @@ class PlayerResource extends Resource
      * Returns a list of transactions for the specified date.
      *
      * @param  string  $date  The date of the transactions. Format: yyyy-MM-dd. Examples: 2017-07-31, 2017-09-01
-     * @return array
      */
     public function transactionsByDate(string $date): array
     {
@@ -188,7 +167,6 @@ class PlayerResource extends Resource
      * Returns all players selected for the Pro Bowl, filtered by season.
      *
      * @param  string  $season  Year of the season. Examples: 2016, 2017
-     * @return array
      */
     public function proBowlers(string $season): array
     {
@@ -197,4 +175,3 @@ class PlayerResource extends Resource
         return $this->client->get($endpoint);
     }
 }
-

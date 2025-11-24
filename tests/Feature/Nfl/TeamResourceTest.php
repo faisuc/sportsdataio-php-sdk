@@ -38,4 +38,3 @@ it('can get basic team information', function () {
 
     expect($result)->toBeArray();
 });
-

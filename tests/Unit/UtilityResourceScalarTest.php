@@ -96,4 +96,3 @@ it('correctly handles integer response for currentWeek', function () {
 
     expect($result)->toBe(5)->toBeInt();
 });
-

@@ -101,4 +101,3 @@ it('can get upcoming week', function () {
 
     expect($result)->toBeInt()->or->toBeNull();
 });
-
