@@ -2,6 +2,7 @@
 
 namespace Faisuc\SportsdataioPhpSdk;
 
+use Faisuc\SportsdataioPhpSdk\Mlb\MlbClient;
 use Faisuc\SportsdataioPhpSdk\Nfl\NflClient;
 
 class SportsdataioPhpSdk
@@ -9,6 +10,8 @@ class SportsdataioPhpSdk
     protected Client $client;
 
     protected ?NflClient $nfl = null;
+
+    protected ?MlbClient $mlb = null;
 
     public function __construct(string $apiKey, ?Client $client = null)
     {
@@ -27,6 +30,20 @@ class SportsdataioPhpSdk
         }
 
         return $this->nfl;
+    }
+
+    /**
+     * Get the MLB client
+     *
+     * @return MlbClient
+     */
+    public function mlb(): MlbClient
+    {
+        if ($this->mlb === null) {
+            $this->mlb = new MlbClient($this->client);
+        }
+
+        return $this->mlb;
     }
 
     /**

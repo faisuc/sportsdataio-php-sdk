@@ -41,11 +41,6 @@ class Client
      */
     public function get(string $endpoint, array $queryParams = [], bool $useBakerApi = false): mixed
     {
-        $baseUrl = $useBakerApi ? $this->bakerBaseUrl : $this->baseUrl;
-        $url = $baseUrl.$endpoint;
-
-        $queryParams['key'] = $this->apiKey;
-
         if ($useBakerApi) {
             $client = new GuzzleClient([
                 'base_uri' => $this->bakerBaseUrl,
@@ -75,6 +70,11 @@ class Client
     protected function decodeResponse(ResponseInterface $response): mixed
     {
         $body = $response->getBody()->getContents();
+
+        if (trim($body) === '') {
+            return [];
+        }
+
         $decoded = json_decode($body, true);
 
         if ($decoded === null && json_last_error() !== JSON_ERROR_NONE) {

@@ -162,13 +162,13 @@ class BettingResource extends Resource
     /**
      * Returns the markets of all available types and available outcomes for the specified GameID.
      *
-     * @param  int  $scoreId  The ScoreID of the desired game/score
+     * @param  int  $gameId  The GameID of the desired game
      * @param  string  $include  This parameter indicates which BettingOutcome records to return. Possible values: available, unlisted
      * @return array
      */
-    public function bettingMarketsByGame(int $scoreId, string $include = 'available'): array
+    public function bettingMarketsByGame(int $gameId, string $include = 'available'): array
     {
-        $endpoint = $this->buildEndpoint("odds/json/BettingMarketsByScoreID/{$scoreId}");
+        $endpoint = $this->buildEndpoint("odds/json/BettingMarketsByGameID/{$gameId}");
 
         return $this->client->get($endpoint, ['include' => $include]);
     }

@@ -151,6 +151,179 @@ $currentSeason = $sdk->nfl()->utility()->currentSeason();
 $currentWeek = $sdk->nfl()->utility()->currentWeek();
 ```
 
+## MLB
+
+### API Coverage
+
+The MLB implementation supports all available endpoints including:
+
+- Competition Feeds (Standings, Rankings & Brackets)
+- Teams, Players & Rosters
+- Venues & Officials
+- Event Feeds (Schedules, Scores, Play by Play)
+- Team & Player Stats
+- Betting Feeds (Game Lines, Props, Futures, Trends)
+- Fantasy Feeds (Projections, Salaries, Stats & Points)
+- News & Images
+- Utility Endpoints
+
+### Examples
+
+#### Competition Feeds
+
+```php
+// Get standings for a season
+$standings = $sdk->mlb()->competition()->standings('2023');
+```
+
+#### Teams & Players
+
+```php
+// Get all active teams
+$teams = $sdk->mlb()->teams()->allActive();
+
+// Get all teams
+$allTeams = $sdk->mlb()->teams()->all();
+
+// Get teams by season
+$teamsBySeason = $sdk->mlb()->teams()->bySeason('2023REG');
+
+// Get all active players
+$players = $sdk->mlb()->players()->allActive();
+
+// Get free agents
+$freeAgents = $sdk->mlb()->players()->freeAgents();
+
+// Get players by team
+$teamPlayers = $sdk->mlb()->players()->byTeam('NYY');
+
+// Get player details with injuries
+$playerDetails = $sdk->mlb()->players()->detailsActive();
+
+// Get depth charts
+$depthCharts = $sdk->mlb()->players()->depthCharts();
+
+// Get starting lineups by date
+$lineups = $sdk->mlb()->players()->startingLineupsByDate('2023-07-15');
+```
+
+#### Events & Scores
+
+```php
+// Get schedules for a season
+$schedules = $sdk->mlb()->events()->schedules('2023');
+
+// Get basic schedules
+$basicSchedules = $sdk->mlb()->events()->schedulesBasic('2023');
+
+// Get scores by date (final)
+$scoresFinal = $sdk->mlb()->events()->scoresByDateFinal('2023-07-15');
+
+// Get scores by date (live & final)
+$scores = $sdk->mlb()->events()->scoresByDate('2023-07-15');
+
+// Get play by play for a game
+$playByPlay = $sdk->mlb()->events()->playByPlay(12345);
+```
+
+#### Statistics
+
+```php
+// Get box score for a game (final)
+$boxScore = $sdk->mlb()->stats()->boxScoreFinal(12345);
+
+// Get box score for a game (live & final)
+$boxScoreLive = $sdk->mlb()->stats()->boxScore(12345);
+
+// Get box scores by date
+$boxScores = $sdk->mlb()->stats()->boxScores('2023-07-15');
+
+// Get player season stats
+$playerStats = $sdk->mlb()->stats()->playerSeasonStats('2023');
+
+// Get player season stats by team
+$teamPlayerStats = $sdk->mlb()->stats()->playerSeasonStatsByTeam('2023', 'NYY');
+
+// Get team season stats
+$teamStats = $sdk->mlb()->stats()->teamSeasonStats('2023');
+
+// Get player game logs
+$gameLogs = $sdk->mlb()->stats()->playerGameLogs('2023', 10001365, 'all');
+```
+
+#### Betting
+
+```php
+// Get pre-game odds by date
+$odds = $sdk->mlb()->betting()->preGameOddsByDate('2023-07-15');
+
+// Get in-game odds by date
+$inGameOdds = $sdk->mlb()->betting()->inGameOddsByDate('2023-07-15');
+
+// Get betting events by date
+$bettingEvents = $sdk->mlb()->betting()->bettingEventsByDate('2023-07-15');
+
+// Get betting markets by game
+$markets = $sdk->mlb()->betting()->bettingMarketsByGame(12345);
+
+// Get betting trends by matchup
+$trends = $sdk->mlb()->betting()->bettingTrendsByMatchup('NYY', 'BOS');
+
+// Get betting splits by game
+$splits = $sdk->mlb()->betting()->bettingSplitsByGame(12345);
+```
+
+#### Fantasy
+
+```php
+// Get projected player game stats by date
+$projections = $sdk->mlb()->fantasy()->projectedPlayerGameStatsByDate('2023-07-15');
+
+// Get projected player season stats with ADP
+$seasonProjections = $sdk->mlb()->fantasy()->projectedPlayerSeasonStatsWithAdp('2023');
+
+// Get DFS slates by date
+$slates = $sdk->mlb()->fantasy()->dfsSlatesByDate('2023-07-15');
+
+// Get fantasy points by date
+$fantasyPoints = $sdk->mlb()->fantasy()->fantasyPointsByDate('2023-07-15');
+```
+
+#### News
+
+```php
+// Get latest news
+$news = $sdk->mlb()->news()->news();
+
+// Get news by date
+$newsByDate = $sdk->mlb()->news()->newsByDate('2023-07-15');
+
+// Get news by player
+$newsByPlayer = $sdk->mlb()->news()->newsByPlayer(10000507);
+
+// Get premium news
+$premiumNews = $sdk->mlb()->news()->premiumNews();
+
+// Get headshots
+$headshots = $sdk->mlb()->news()->headshots();
+```
+
+#### Utility
+
+```php
+// Check if games are in progress
+$inProgress = $sdk->mlb()->utility()->areGamesInProgress();
+
+// Get current season
+$currentSeason = $sdk->mlb()->utility()->currentSeason();
+
+// Get betting metadata
+$bettingMetadata = $sdk->mlb()->utility()->bettingMetadata();
+
+// Get active sportsbooks
+$sportsbooks = $sdk->mlb()->utility()->activeSportsbooks();
+```
+
 ## Testing
 
 ```bash

@@ -151,7 +151,7 @@ it('can get DFS slate ownership projections by slate', function () {
     $client = new Client($this->apiKey);
     $resource = new FantasyResource($client, 'nfl');
 
-    $result = $resource->dfsSlateOwnershipProjectionsBySlate('12345');
+    $result = $resource->dfsSlateOwnershipProjectionsBySlate(12345);
 
     expect($result)->toBeArray();
 });

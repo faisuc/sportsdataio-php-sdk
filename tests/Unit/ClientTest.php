@@ -132,3 +132,17 @@ it('preserves null in arrays', function () {
         ->and($result['value'])->toBeNull();
 });
 
+it('handles whitespace-only responses', function () {
+    $mock = new MockHandler([
+        new Response(200, [], '   '),
+    ]);
+
+    $handlerStack = HandlerStack::create($mock);
+    $guzzleClient = new GuzzleClient(['handler' => $handlerStack]);
+    $client = new Client($this->apiKey, $guzzleClient);
+
+    $result = $client->get('/test');
+
+    expect($result)->toBe([]);
+});
+
