@@ -144,4 +144,3 @@ it('handles whitespace-only responses', function () {
 
     expect($result)->toBe([]);
 });
-

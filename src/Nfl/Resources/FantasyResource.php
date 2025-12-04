@@ -217,7 +217,6 @@ class FantasyResource extends Resource
      * Returns Slate Ownership Projections for a specific slate.
      *
      * @param  int  $slateId  SlateID of the DFS Slate
-     * @return array
      */
     public function dfsSlateOwnershipProjectionsBySlate(int $slateId): array
     {

@@ -29,4 +29,3 @@ it('can get teams by season', function () {
 
     expect($result)->toBeArray();
 });
-

@@ -11,4 +11,3 @@ it('can get standings for a season', function () {
 
     expect($result)->toBeArray();
 });
-

@@ -56,4 +56,3 @@ it('can get play by play (live and final)', function () {
 
     expect($result)->toBeArray();
 });
-

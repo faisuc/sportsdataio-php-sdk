@@ -8,8 +8,6 @@ class TeamResource extends Resource
 {
     /**
      * Returns all teams with information such as team name, city, league, division, colors, logos, head coach (manager), hitting coach, and pitching coach.
-     *
-     * @return array
      */
     public function all(): array
     {
@@ -20,8 +18,6 @@ class TeamResource extends Resource
 
     /**
      * Returns all active teams with information such as team name, city, league, division, colors, logos, head coach (manager), hitting coach, and pitching coach.
-     *
-     * @return array
      */
     public function allActive(): array
     {
@@ -34,7 +30,6 @@ class TeamResource extends Resource
      * Returns all active teams with information such as team name, city, league, division, colors, logos, head coach (manager), hitting coach, and pitching coach, for the specified season.
      *
      * @param  string  $season  Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: 2015REG, 2015PRE, 2015POST
-     * @return array
      */
     public function bySeason(string $season): array
     {
@@ -43,4 +38,3 @@ class TeamResource extends Resource
         return $this->client->get($endpoint);
     }
 }
-

@@ -32,8 +32,6 @@ class SportsdataioPhpSdk
 
     /**
      * Get the MLB client
-     *
-     * @return MlbClient
      */
     public function mlb(): MlbClient
     {

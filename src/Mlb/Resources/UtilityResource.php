@@ -8,8 +8,6 @@ class UtilityResource extends Resource
 {
     /**
      * Returns true if there is at least one game being played at the time of the request or false if there are none.
-     *
-     * @return bool
      */
     public function areGamesInProgress(): bool
     {
@@ -22,8 +20,6 @@ class UtilityResource extends Resource
 
     /**
      * Returns the list of MarketTypes, BetTypes, PeriodTypes, OutcomeTypes, and ResultTypes to map the IDs to descriptive names. Also includes a list of the MarketType, BetType & PeriodType combinations which we will have resulting for.
-     *
-     * @return array
      */
     public function bettingMetadata(): array
     {
@@ -34,8 +30,6 @@ class UtilityResource extends Resource
 
     /**
      * Returns the calendar year of the current season.
-     *
-     * @return int|null
      */
     public function currentSeason(): ?int
     {
@@ -48,8 +42,6 @@ class UtilityResource extends Resource
 
     /**
      * Returns a list of all available sportsbooks with their associated unique IDs.
-     *
-     * @return array
      */
     public function activeSportsbooks(): array
     {
@@ -58,4 +50,3 @@ class UtilityResource extends Resource
         return $this->client->get($endpoint);
     }
 }
-

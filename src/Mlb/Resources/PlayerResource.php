@@ -8,8 +8,6 @@ class PlayerResource extends Resource
 {
     /**
      * Returns all players currently on a team, including biographical information, team, jersey number, position, bat hand, and throw hand.
-     *
-     * @return array
      */
     public function allActive(): array
     {
@@ -20,8 +18,6 @@ class PlayerResource extends Resource
 
     /**
      * Returns all players that are currently not on a team, including biographical information, position, bat hand, and throw hand.
-     *
-     * @return array
      */
     public function freeAgents(): array
     {
@@ -34,7 +30,6 @@ class PlayerResource extends Resource
      * Returns all players with biographical information on the specified team.
      *
      * @param  string  $team  The abbreviation of the requested team. Examples: SF, NYY
-     * @return array
      */
     public function byTeam(string $team): array
     {
@@ -45,8 +40,6 @@ class PlayerResource extends Resource
 
     /**
      * Returns all players currently on a team, including biographical information, team, jersey number, position, and injuries.
-     *
-     * @return array
      */
     public function detailsActive(): array
     {
@@ -57,8 +50,6 @@ class PlayerResource extends Resource
 
     /**
      * Returns all players currently not on a team, including biographical information, team, jersey number, position, and injuries.
-     *
-     * @return array
      */
     public function detailsFreeAgents(): array
     {
@@ -69,8 +60,6 @@ class PlayerResource extends Resource
 
     /**
      * Returns all players that have an injury or are on an injured list, suspended list, restricted list, paternity list, bereavement list, or military list.
-     *
-     * @return array
      */
     public function detailsInjured(): array
     {
@@ -83,7 +72,6 @@ class PlayerResource extends Resource
      * Returns all players on the specified team, with full bio information, injury information, and player ID's.
      *
      * @param  string  $team  The abbreviation of the requested team. Examples: SF, NYY
-     * @return array
      */
     public function detailsByTeam(string $team): array
     {
@@ -94,8 +82,6 @@ class PlayerResource extends Resource
 
     /**
      * Returns depth charts for all teams. Includes only players on the active roster.
-     *
-     * @return array
      */
     public function depthCharts(): array
     {
@@ -108,7 +94,6 @@ class PlayerResource extends Resource
      * Returns projected and confirmed starting lineups for games on the specified date.
      *
      * @param  string  $date  The date of the slates. Format: yyyy-MM-dd. Examples: 2017-07-31, 2017-09-01
-     * @return array
      */
     public function startingLineupsByDate(string $date): array
     {
@@ -121,7 +106,6 @@ class PlayerResource extends Resource
      * Returns a list of transactions on given date.
      *
      * @param  string  $date  The date of the news. Format: yyyy-MM-dd. Examples: 2015-07-31, 2015-09-01
-     * @return array
      */
     public function transactionsByDate(string $date): array
     {
@@ -135,7 +119,6 @@ class PlayerResource extends Resource
      *
      * @param  int  $hitterId  Unique FantasyData Player ID. Example: 10000031
      * @param  int  $pitcherId  Unique FantasyData Player ID. Example: 10000618
-     * @return array
      */
     public function batterVsPitcherStats(int $hitterId, int $pitcherId): array
     {
@@ -149,7 +132,6 @@ class PlayerResource extends Resource
      *
      * @param  int  $gameId  The GameID of an MLB game
      * @param  string  $team  The abbreviation of the requested team. Examples: SF, NYY
-     * @return array
      */
     public function teamHittingVsStartingPitcher(int $gameId, string $team): array
     {
@@ -158,4 +140,3 @@ class PlayerResource extends Resource
         return $this->client->get($endpoint);
     }
 }
-

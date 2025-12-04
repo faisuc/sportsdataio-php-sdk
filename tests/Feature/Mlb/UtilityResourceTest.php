@@ -38,4 +38,3 @@ it('can get active sportsbooks', function () {
 
     expect($result)->toBeArray();
 });
-

@@ -10,7 +10,6 @@ class CompetitionResource extends Resource
      * Returns regular season standings for all divisions and leagues, which is used to derive postseason seeding.
      *
      * @param  string  $season  Year of the season. Examples: 2017, 2018
-     * @return array
      */
     public function standings(string $season): array
     {
@@ -19,4 +18,3 @@ class CompetitionResource extends Resource
         return $this->client->get($endpoint);
     }
 }
-
