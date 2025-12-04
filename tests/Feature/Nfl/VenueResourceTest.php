@@ -20,4 +20,3 @@ it('can get referees', function () {
 
     expect($result)->toBeArray();
 });
-

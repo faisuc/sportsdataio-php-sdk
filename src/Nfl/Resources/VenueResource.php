@@ -8,8 +8,6 @@ class VenueResource extends Resource
 {
     /**
      * Returns all stadiums with capacity, address, latitude/longitude, city, state, and country.
-     *
-     * @return array
      */
     public function stadiums(): array
     {
@@ -20,8 +18,6 @@ class VenueResource extends Resource
 
     /**
      * Returns referees with name, numbers, position, college, and years of experience.
-     *
-     * @return array
      */
     public function referees(): array
     {
@@ -30,4 +26,3 @@ class VenueResource extends Resource
         return $this->client->get($endpoint);
     }
 }
-

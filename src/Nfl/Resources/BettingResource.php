@@ -11,7 +11,6 @@ class BettingResource extends Resource
      *
      * @param  string  $season  Year of the season, with optional season type. Examples: 2018, 2018POST
      * @param  int  $week  The week of the scores (games). Examples: 1, 2
-     * @return array
      */
     public function preGameOddsByWeek(string $season, int $week): array
     {
@@ -26,7 +25,6 @@ class BettingResource extends Resource
      * @param  string  $season  Year of the season, with optional season type. Examples: 2018, 2018POST
      * @param  int  $week  The week of the scores (games). Examples: 1, 2
      * @param  string  $sportsbookGroup  The name of the Sportsbook grouping. Examples: G1100
-     * @return array
      */
     public function preGameAndPeriodOddsByWeek(string $season, int $week, string $sportsbookGroup): array
     {
@@ -40,7 +38,6 @@ class BettingResource extends Resource
      *
      * @param  string  $season  Year of the season, with optional season type. Examples: 2018, 2018POST
      * @param  int  $week  The week of the scores (games). Examples: 1, 2
-     * @return array
      */
     public function periodGameOddsByWeek(string $season, int $week): array
     {
@@ -53,7 +50,6 @@ class BettingResource extends Resource
      * Returns the full-game core odds for a specified game with line movement.
      *
      * @param  int  $scoreId  The ScoreID of an NFL score (game)
-     * @return array
      */
     public function preGameOddsLineMovement(int $scoreId): array
     {
@@ -67,7 +63,6 @@ class BettingResource extends Resource
      *
      * @param  string  $season  Year of the season, with optional season type. Examples: 2018, 2018POST
      * @param  int  $week  The week of the scores (games). Examples: 1, 2
-     * @return array
      */
     public function inGameOddsByWeek(string $season, int $week): array
     {
@@ -82,7 +77,6 @@ class BettingResource extends Resource
      * @param  string  $season  Year of the season, with optional season type. Examples: 2018, 2018POST
      * @param  int  $week  The week of the scores (games). Examples: 1, 2
      * @param  string  $sportsbookGroup  The name of the Sportsbook grouping. Examples: G1100
-     * @return array
      */
     public function inGameOddsByWeekWithGroup(string $season, int $week, string $sportsbookGroup): array
     {
@@ -95,7 +89,6 @@ class BettingResource extends Resource
      * Returns in-play game odds line movement for the specified game.
      *
      * @param  int  $scoreId  The ScoreID of an NFL score (game)
-     * @return array
      */
     public function inGameOddsLineMovement(int $scoreId): array
     {
@@ -108,7 +101,6 @@ class BettingResource extends Resource
      * Returns BettingEvents for the specified date.
      *
      * @param  string  $date  The date of the game(s). Format: yyyy-MM-dd. Examples: 2020-09-10, 2020-09-13
-     * @return array
      */
     public function bettingEventsByDate(string $date): array
     {
@@ -121,7 +113,6 @@ class BettingResource extends Resource
      * Returns BettingEvents for the specified season.
      *
      * @param  string  $season  Year of the season. Examples: 2020, 2021
-     * @return array
      */
     public function bettingEvents(string $season): array
     {
@@ -135,7 +126,6 @@ class BettingResource extends Resource
      *
      * @param  string  $eventId  The EventId of the desired event/game
      * @param  string  $include  This parameter indicates which BettingOutcome records to return. Possible values: available, unlisted
-     * @return array
      */
     public function bettingMarketsByEvent(string $eventId, string $include = 'available'): array
     {
@@ -150,7 +140,6 @@ class BettingResource extends Resource
      * @param  string  $eventId  The EventId of the desired event/game
      * @param  string  $sportsbookGroup  The name of the Sportsbook grouping. Examples: G1100
      * @param  string  $include  This parameter indicates which BettingOutcome records to return. Possible values: available, unlisted
-     * @return array
      */
     public function bettingMarketsByEventWithGroup(string $eventId, string $sportsbookGroup, string $include = 'available'): array
     {
@@ -164,7 +153,6 @@ class BettingResource extends Resource
      *
      * @param  int  $gameId  The GameID of the desired game
      * @param  string  $include  This parameter indicates which BettingOutcome records to return. Possible values: available, unlisted
-     * @return array
      */
     public function bettingMarketsByGame(int $gameId, string $include = 'available'): array
     {
@@ -179,7 +167,6 @@ class BettingResource extends Resource
      * @param  int  $gameId  The GameID of the desired game/score
      * @param  string  $sportsbookGroup  The name of the Sportsbook grouping. Examples: G1100
      * @param  string  $include  This parameter indicates which BettingOutcome records to return. Possible values: available, unlisted
-     * @return array
      */
     public function bettingMarketsByGameWithGroup(int $gameId, string $sportsbookGroup, string $include = 'available'): array
     {
@@ -194,7 +181,6 @@ class BettingResource extends Resource
      * @param  string  $eventId  The EventId of the desired event/game
      * @param  string  $marketTypeId  The Market Type ID. Some common types: 1 for Game Lines, 2 for Player Props, 3 for Team Props, 6 for Game Props
      * @param  string  $include  This parameter indicates which BettingOutcome records to return. Possible values: available, unlisted
-     * @return array
      */
     public function bettingMarketsByMarketType(string $eventId, string $marketTypeId, string $include = 'available'): array
     {
@@ -208,7 +194,6 @@ class BettingResource extends Resource
      *
      * @param  int  $scoreId  The unique ScoreID of the game in question
      * @param  string  $include  This parameter indicates which BettingOutcome records to return. Possible values: available, unlisted
-     * @return array
      */
     public function bettingPlayerPropsByGame(int $scoreId, string $include = 'available'): array
     {
@@ -221,7 +206,6 @@ class BettingResource extends Resource
      * Returns available Futures markets for the specified season.
      *
      * @param  string  $season  Year of the season (with optional season type). Examples: 2020REG, 2020PRE, 2020POST, 2021
-     * @return array
      */
     public function bettingFuturesBySeason(string $season): array
     {
@@ -235,7 +219,6 @@ class BettingResource extends Resource
      *
      * @param  string  $team  Abbreviation of a team. Example: PHI
      * @param  string  $opponent  Abbreviation of an opponent. Example: NE
-     * @return array
      */
     public function bettingTrendsByMatchup(string $team, string $opponent): array
     {
@@ -248,7 +231,6 @@ class BettingResource extends Resource
      * Returns recent team trends and performance against betting data in recent sets of games.
      *
      * @param  string  $team  Abbreviation of a team. Example: PHI
-     * @return array
      */
     public function bettingTrendsByTeam(string $team): array
     {
@@ -261,7 +243,6 @@ class BettingResource extends Resource
      * Returns a list of Money and Bet Percentage splits for each outcome type available in the specified market.
      *
      * @param  string  $marketId  The BettingMarketID of the market
-     * @return array
      */
     public function bettingSplitsByMarket(string $marketId): array
     {
@@ -274,7 +255,6 @@ class BettingResource extends Resource
      * Returns a list of Money and Bet Percentage splits for each outcome type available in the specified game.
      *
      * @param  int  $scoreId  The ScoreID of the desired game
-     * @return array
      */
     public function bettingSplitsByGame(int $scoreId): array
     {
@@ -283,4 +263,3 @@ class BettingResource extends Resource
         return $this->client->get($endpoint);
     }
 }
-

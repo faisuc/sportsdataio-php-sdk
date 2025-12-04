@@ -45,8 +45,6 @@ class NflClient
 
     /**
      * Competition feeds (Standings, Rankings & Brackets)
-     *
-     * @return CompetitionResource
      */
     public function competition(): CompetitionResource
     {
@@ -59,8 +57,6 @@ class NflClient
 
     /**
      * Teams, Players & Rosters
-     *
-     * @return TeamResource
      */
     public function teams(): TeamResource
     {
@@ -73,8 +69,6 @@ class NflClient
 
     /**
      * Player-related endpoints
-     *
-     * @return PlayerResource
      */
     public function players(): PlayerResource
     {
@@ -87,8 +81,6 @@ class NflClient
 
     /**
      * Venues & Officials
-     *
-     * @return VenueResource
      */
     public function venues(): VenueResource
     {
@@ -101,8 +93,6 @@ class NflClient
 
     /**
      * Event Feeds (Schedules & Game Day Info, Scores & Game State, Play by Play)
-     *
-     * @return EventResource
      */
     public function events(): EventResource
     {
@@ -115,8 +105,6 @@ class NflClient
 
     /**
      * Team & Player Stats
-     *
-     * @return StatsResource
      */
     public function stats(): StatsResource
     {
@@ -129,8 +117,6 @@ class NflClient
 
     /**
      * Betting Feeds
-     *
-     * @return BettingResource
      */
     public function betting(): BettingResource
     {
@@ -143,8 +129,6 @@ class NflClient
 
     /**
      * Fantasy Feeds
-     *
-     * @return FantasyResource
      */
     public function fantasy(): FantasyResource
     {
@@ -157,8 +141,6 @@ class NflClient
 
     /**
      * News & Images
-     *
-     * @return NewsResource
      */
     public function news(): NewsResource
     {
@@ -171,8 +153,6 @@ class NflClient
 
     /**
      * Utility Endpoints
-     *
-     * @return UtilityResource
      */
     public function utility(): UtilityResource
     {
@@ -183,4 +163,3 @@ class NflClient
         return $this->utility;
     }
 }
-

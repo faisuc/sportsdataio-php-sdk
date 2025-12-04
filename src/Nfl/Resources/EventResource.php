@@ -10,7 +10,6 @@ class EventResource extends Resource
      * Returns game details including home and away teams, date and time, season type, week, and gameday info.
      *
      * @param  string  $season  Year of the season (with optional season type). Examples: 2018, 2018PRE, 2018POST, 2018STAR, 2019
-     * @return array
      */
     public function schedules(string $season): array
     {
@@ -23,7 +22,6 @@ class EventResource extends Resource
      * Returns a lightweight schedule with home and away teams, game date and time, season type, and week.
      *
      * @param  string  $season  Year of the season (with optional season type). Examples: 2018, 2018PRE, 2018POST, 2018STAR, 2019
-     * @return array
      */
     public function schedulesBasic(string $season): array
     {
@@ -36,7 +34,6 @@ class EventResource extends Resource
      * Returns scores for games on the specified date (Final only).
      *
      * @param  string  $date  The date of the games. Format: yyyy-MM-dd. Examples: 2021-09-12, 2021-11-28
-     * @return array
      */
     public function scoresByDateFinal(string $date): array
     {
@@ -49,7 +46,6 @@ class EventResource extends Resource
      * Returns scores for games on the specified date (Live & Final).
      *
      * @param  string  $date  The date of the games. Format: yyyy-MM-dd. Examples: 2021-09-12, 2021-11-28
-     * @return array
      */
     public function scoresByDate(string $date): array
     {
@@ -62,7 +58,6 @@ class EventResource extends Resource
      * Returns scores for games in the specified season (Final only).
      *
      * @param  string  $season  Year of the season (with optional season type). Examples: 2018, 2018PRE, 2018POST, 2018STAR, 2019
-     * @return array
      */
     public function scoresBySeasonFinal(string $season): array
     {
@@ -75,7 +70,6 @@ class EventResource extends Resource
      * Returns scores for games in the specified season (Live & Final).
      *
      * @param  string  $season  Year of the season (with optional season type). Examples: 2018, 2018PRE, 2018POST, 2018STAR, 2019
-     * @return array
      */
     public function scoresBySeason(string $season): array
     {
@@ -89,7 +83,6 @@ class EventResource extends Resource
      *
      * @param  string  $season  Year of the season and the season type. Examples: 2015REG, 2015PRE, 2015POST
      * @param  int  $week  Week of the season. Valid values: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4
-     * @return array
      */
     public function scoresByWeekFinal(string $season, int $week): array
     {
@@ -103,7 +96,6 @@ class EventResource extends Resource
      *
      * @param  string  $season  Year of the season and the season type. Examples: 2015REG, 2015PRE, 2015POST
      * @param  int  $week  Week of the season. Valid values: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4
-     * @return array
      */
     public function scoresByWeek(string $season, int $week): array
     {
@@ -117,7 +109,6 @@ class EventResource extends Resource
      *
      * @param  string  $season  Year of the season and the season type. Examples: 2015REG, 2015PRE, 2015POST
      * @param  int  $week  Week of the season. Valid values: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4
-     * @return array
      */
     public function scoresBasicFinal(string $season, int $week): array
     {
@@ -131,7 +122,6 @@ class EventResource extends Resource
      *
      * @param  string  $season  Year of the season and the season type. Examples: 2015REG, 2015PRE, 2015POST
      * @param  int  $week  Week of the season. Valid values: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4
-     * @return array
      */
     public function scoresBasic(string $season, int $week): array
     {
@@ -144,7 +134,6 @@ class EventResource extends Resource
      * Returns all plays for the specified game (Final only).
      *
      * @param  int  $gameId  The GameID of a NFL game
-     * @return array
      */
     public function playByPlayFinal(int $gameId): array
     {
@@ -157,7 +146,6 @@ class EventResource extends Resource
      * Returns all plays for the specified game (Live & Final).
      *
      * @param  int  $gameId  The GameID of a NFL game
-     * @return array
      */
     public function playByPlay(int $gameId): array
     {
@@ -172,7 +160,6 @@ class EventResource extends Resource
      * @param  string  $season  Year of the season and the season type. Examples: 2015REG, 2015PRE, 2015POST
      * @param  int  $week  Week of the season. Valid values: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4
      * @param  string  $homeTeam  Abbreviation of the home team. Example: WAS
-     * @return array
      */
     public function playByPlayByTeamFinal(string $season, int $week, string $homeTeam): array
     {
@@ -187,7 +174,6 @@ class EventResource extends Resource
      * @param  string  $season  Year of the season and the season type. Examples: 2015REG, 2015PRE, 2015POST
      * @param  int  $week  Week of the season. Valid values: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4
      * @param  string  $homeTeam  Abbreviation of the home team. Example: WAS
-     * @return array
      */
     public function playByPlayByTeam(string $season, int $week, string $homeTeam): array
     {
@@ -202,7 +188,6 @@ class EventResource extends Resource
      * @param  string  $season  Year of the season and the season type. Examples: 2015REG, 2015PRE, 2015POST
      * @param  int  $week  Week of the season. Valid values: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4
      * @param  int  $minutes  Only returns plays that have changed in the last X minutes. Valid entries: 1 or 2
-     * @return array
      */
     public function playByPlayDelta(string $season, int $week, int $minutes): array
     {
@@ -211,4 +196,3 @@ class EventResource extends Resource
         return $this->client->get($endpoint);
     }
 }
-

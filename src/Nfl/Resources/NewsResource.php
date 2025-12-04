@@ -8,8 +8,6 @@ class NewsResource extends Resource
 {
     /**
      * Returns basic RotoBaller news feed, with limited stories available - usually 0-1 stories per day.
-     *
-     * @return array
      */
     public function news(): array
     {
@@ -22,7 +20,6 @@ class NewsResource extends Resource
      * Returns basic RotoBaller news feed by date.
      *
      * @param  string  $date  The date of the news. Format: yyyy-MM-dd. Examples: 2017-07-31, 2017-09-01
-     * @return array
      */
     public function newsByDate(string $date): array
     {
@@ -35,7 +32,6 @@ class NewsResource extends Resource
      * Returns basic RotoBaller news feed by player ID.
      *
      * @param  int  $playerId  Each NFL player has a unique ID assigned by FantasyData. Example: 14257
-     * @return array
      */
     public function newsByPlayer(int $playerId): array
     {
@@ -48,7 +44,6 @@ class NewsResource extends Resource
      * Returns basic RotoBaller news feed by team.
      *
      * @param  string  $team  Abbreviation of the team. Example: WAS
-     * @return array
      */
     public function newsByTeam(string $team): array
     {
@@ -59,8 +54,6 @@ class NewsResource extends Resource
 
     /**
      * Returns RotoBaller's Premium News feed, with the latest updated stories in greater detail.
-     *
-     * @return array
      */
     public function premiumNews(): array
     {
@@ -73,7 +66,6 @@ class NewsResource extends Resource
      * Returns RotoBaller's Premium News feed by date.
      *
      * @param  string  $date  The date of the news. Format: yyyy-MM-dd. Examples: 2017-07-31, 2017-09-01
-     * @return array
      */
     public function premiumNewsByDate(string $date): array
     {
@@ -86,7 +78,6 @@ class NewsResource extends Resource
      * Returns RotoBaller's Premium News feed by team.
      *
      * @param  string  $team  Abbreviation of the team. Example: WAS
-     * @return array
      */
     public function premiumNewsByTeam(string $team): array
     {
@@ -97,8 +88,6 @@ class NewsResource extends Resource
 
     /**
      * Returns USA Today/IMAGN cropped action headshots for all active NFL players.
-     *
-     * @return array
      */
     public function headshots(): array
     {
@@ -107,4 +96,3 @@ class NewsResource extends Resource
         return $this->client->get($endpoint);
     }
 }
-

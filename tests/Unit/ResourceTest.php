@@ -18,4 +18,3 @@ it('builds correct endpoint URLs without duplicate format', function () {
         ->not->toEndWith('/json')
         ->not->toStartWith('/');
 });
-

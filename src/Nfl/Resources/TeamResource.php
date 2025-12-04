@@ -8,8 +8,6 @@ class TeamResource extends Resource
 {
     /**
      * Returns full team information for teams currently active in the league.
-     *
-     * @return array
      */
     public function allActive(): array
     {
@@ -20,8 +18,6 @@ class TeamResource extends Resource
 
     /**
      * Returns full team information for all teams regardless of current active status.
-     *
-     * @return array
      */
     public function all(): array
     {
@@ -34,7 +30,6 @@ class TeamResource extends Resource
      * Returns full team information for active teams in the specified season.
      *
      * @param  string  $season  Year of the season and the season type. Examples: 2015REG, 2015PRE, 2015POST
-     * @return array
      */
     public function bySeason(string $season): array
     {
@@ -45,8 +40,6 @@ class TeamResource extends Resource
 
     /**
      * Returns basic team information for all teams regardless of current active status.
-     *
-     * @return array
      */
     public function basic(): array
     {
@@ -55,4 +48,3 @@ class TeamResource extends Resource
         return $this->client->get($endpoint);
     }
 }
-

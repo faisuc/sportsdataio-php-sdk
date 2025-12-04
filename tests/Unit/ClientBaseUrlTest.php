@@ -34,4 +34,3 @@ it('updates the HTTP client base URI when setBaseUrl is called', function () {
     $baseUriString = is_string($baseUri) ? $baseUri : (string) $baseUri;
     expect($baseUriString)->toBe($newBaseUrl.'/');
 });
-

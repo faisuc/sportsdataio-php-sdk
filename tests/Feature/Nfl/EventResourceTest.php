@@ -137,4 +137,3 @@ it('can get play by play delta', function () {
 
     expect($result)->toBeArray();
 });
-

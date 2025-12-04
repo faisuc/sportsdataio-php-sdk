@@ -182,4 +182,3 @@ it('can get betting splits by game', function () {
 
     expect($result)->toBeArray();
 });
-

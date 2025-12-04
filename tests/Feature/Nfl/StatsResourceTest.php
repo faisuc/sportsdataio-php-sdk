@@ -236,4 +236,3 @@ it('can get player season third down stats', function () {
 
     expect($result)->toBeArray();
 });
-

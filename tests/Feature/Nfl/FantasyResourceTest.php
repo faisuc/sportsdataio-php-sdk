@@ -164,4 +164,3 @@ it('can get upcoming DFS slate ownership projections', function () {
 
     expect($result)->toBeArray();
 });
-

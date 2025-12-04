@@ -18,7 +18,6 @@ abstract class Resource
      * Build the endpoint URL
      *
      * @param  string  $path  The API path (already includes format, e.g., "scores/json/Standings/{$season}")
-     * @return string
      */
     protected function buildEndpoint(string $path): string
     {
@@ -27,13 +26,9 @@ abstract class Resource
 
     /**
      * Build the Baker API endpoint URL
-     *
-     * @param  string  $path
-     * @return string
      */
     protected function buildBakerEndpoint(string $path): string
     {
         return "{$this->sport}/{$path}";
     }
 }
-
